@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct BeenThereApp: App {
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Place.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +26,9 @@ struct BeenThereApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(sharedModelContainer)
     }
+
 }

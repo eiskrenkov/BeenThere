@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		EECE7EA82BB86285004C008E /* BeenThereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EA72BB86285004C008E /* BeenThereApp.swift */; };
-		EECE7EAA2BB86285004C008E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EA92BB86285004C008E /* ContentView.swift */; };
-		EECE7EAC2BB86285004C008E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EAB2BB86285004C008E /* Item.swift */; };
+		EECE7EAA2BB86285004C008E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EA92BB86285004C008E /* RootView.swift */; };
+		EECE7EAC2BB86285004C008E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EAB2BB86285004C008E /* Place.swift */; };
 		EECE7EAE2BB86289004C008E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECE7EAD2BB86289004C008E /* Assets.xcassets */; };
-		EECE7EB22BB86289004C008E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EECE7EB12BB86289004C008E /* Preview Assets.xcassets */; };
 		EECE7EBC2BB8628B004C008E /* BeenThereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EBB2BB8628B004C008E /* BeenThereTests.swift */; };
 		EECE7EC62BB8628B004C008E /* BeenThereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EC52BB8628B004C008E /* BeenThereUITests.swift */; };
 		EECE7EC82BB8628B004C008E /* BeenThereUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EC72BB8628B004C008E /* BeenThereUITestsLaunchTests.swift */; };
+		EECE7ED72BB8653A004C008E /* PlacesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7ED62BB8653A004C008E /* PlacesListView.swift */; };
+		EECE7EDD2BB866D0004C008E /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EDC2BB866D0004C008E /* Routing.swift */; };
+		EECE7EDF2BB86700004C008E /* RootRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EDE2BB86700004C008E /* RootRoute.swift */; };
+		EECE7EE12BB8675D004C008E /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */; };
+		EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE32BB8C8D3004C008E /* Logger.swift */; };
+		EECE7EE62BB8CB84004C008E /* PlaceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE52BB8CB84004C008E /* PlaceForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +42,21 @@
 /* Begin PBXFileReference section */
 		EECE7EA42BB86285004C008E /* BeenThere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeenThere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECE7EA72BB86285004C008E /* BeenThereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeenThereApp.swift; sourceTree = "<group>"; };
-		EECE7EA92BB86285004C008E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		EECE7EAB2BB86285004C008E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		EECE7EA92BB86285004C008E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		EECE7EAB2BB86285004C008E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		EECE7EAD2BB86289004C008E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EECE7EAF2BB86289004C008E /* BeenThere.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeenThere.entitlements; sourceTree = "<group>"; };
-		EECE7EB12BB86289004C008E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EECE7EB72BB8628B004C008E /* BeenThereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeenThereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECE7EBB2BB8628B004C008E /* BeenThereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeenThereTests.swift; sourceTree = "<group>"; };
 		EECE7EC12BB8628B004C008E /* BeenThereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeenThereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECE7EC52BB8628B004C008E /* BeenThereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeenThereUITests.swift; sourceTree = "<group>"; };
 		EECE7EC72BB8628B004C008E /* BeenThereUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeenThereUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EECE7ED62BB8653A004C008E /* PlacesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListView.swift; sourceTree = "<group>"; };
+		EECE7EDC2BB866D0004C008E /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		EECE7EDE2BB86700004C008E /* RootRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRoute.swift; sourceTree = "<group>"; };
+		EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		EECE7EE32BB8C8D3004C008E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		EECE7EE52BB8CB84004C008E /* PlaceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,21 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				EECE7EA72BB86285004C008E /* BeenThereApp.swift */,
-				EECE7EA92BB86285004C008E /* ContentView.swift */,
-				EECE7EAB2BB86285004C008E /* Item.swift */,
+				EECE7ED42BB864A5004C008E /* Views */,
+				EECE7ED52BB864C3004C008E /* Models */,
+				EECE7EE22BB8C8CA004C008E /* Services */,
 				EECE7EAD2BB86289004C008E /* Assets.xcassets */,
 				EECE7EAF2BB86289004C008E /* BeenThere.entitlements */,
-				EECE7EB02BB86289004C008E /* Preview Content */,
 			);
 			path = BeenThere;
-			sourceTree = "<group>";
-		};
-		EECE7EB02BB86289004C008E /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				EECE7EB12BB86289004C008E /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		EECE7EBA2BB8628B004C008E /* BeenThereTests */ = {
@@ -130,6 +132,51 @@
 				EECE7EC72BB8628B004C008E /* BeenThereUITestsLaunchTests.swift */,
 			);
 			path = BeenThereUITests;
+			sourceTree = "<group>";
+		};
+		EECE7ED42BB864A5004C008E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EECE7EA92BB86285004C008E /* RootView.swift */,
+				EECE7ED82BB86559004C008E /* Places */,
+				EECE7EDB2BB866C6004C008E /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EECE7ED52BB864C3004C008E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EECE7EAB2BB86285004C008E /* Place.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EECE7ED82BB86559004C008E /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				EECE7ED62BB8653A004C008E /* PlacesListView.swift */,
+				EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */,
+				EECE7EE52BB8CB84004C008E /* PlaceForm.swift */,
+			);
+			path = Places;
+			sourceTree = "<group>";
+		};
+		EECE7EDB2BB866C6004C008E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EECE7EDC2BB866D0004C008E /* Routing.swift */,
+				EECE7EDE2BB86700004C008E /* RootRoute.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EECE7EE22BB8C8CA004C008E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EECE7EE32BB8C8D3004C008E /* Logger.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECE7EB22BB86289004C008E /* Preview Assets.xcassets in Resources */,
 				EECE7EAE2BB86289004C008E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +308,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EECE7EAA2BB86285004C008E /* ContentView.swift in Sources */,
-				EECE7EAC2BB86285004C008E /* Item.swift in Sources */,
+				EECE7EAA2BB86285004C008E /* RootView.swift in Sources */,
+				EECE7EDF2BB86700004C008E /* RootRoute.swift in Sources */,
+				EECE7EDD2BB866D0004C008E /* Routing.swift in Sources */,
+				EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */,
+				EECE7EAC2BB86285004C008E /* Place.swift in Sources */,
+				EECE7EE12BB8675D004C008E /* PlaceDetailView.swift in Sources */,
+				EECE7ED72BB8653A004C008E /* PlacesListView.swift in Sources */,
+				EECE7EE62BB8CB84004C008E /* PlaceForm.swift in Sources */,
 				EECE7EA82BB86285004C008E /* BeenThereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,11 +475,12 @@
 				CODE_SIGN_ENTITLEMENTS = BeenThere/BeenThere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeenThere/Preview Content\"";
 				DEVELOPMENT_TEAM = U7YQT9DN9X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Been There";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -461,11 +514,12 @@
 				CODE_SIGN_ENTITLEMENTS = BeenThere/BeenThere.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeenThere/Preview Content\"";
 				DEVELOPMENT_TEAM = U7YQT9DN9X;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Been There";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
