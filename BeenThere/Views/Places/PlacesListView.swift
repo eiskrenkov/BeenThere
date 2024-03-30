@@ -16,47 +16,41 @@ struct PlacesListView: View {
     @Query private var places: [Place]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(places) { place in
-                    Button {
-                        router.navigate(to: .placeDetailView(place))
-                    } label: {
-                        Text(place.name)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .overlay {
-                if places.isEmpty {
-                    ContentUnavailableView(
-                        "You haven't been anywhere yet",
-                        systemImage: "airplane",
-                        description: Text("Add your first place using plus button at the top right corner")
-                    )
+        List {
+            ForEach(places) { place in
+                Button {
+                    router.navigate(to: .placeDetailView(place))
+                } label: {
+                    Text(place.name)
                 }
             }
-            .scrollDisabled(places.isEmpty)
-            .navigationTitle("Been There")
-            #if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-            #endif
-            .toolbar {
+            .onDelete(perform: deleteItems)
+        }
+        .overlay {
+            if places.isEmpty {
+                ContentUnavailableView(
+                    "You haven't been anywhere yet",
+                    systemImage: "airplane",
+                    description: Text("Add your first place using plus button at the top right corner")
+                )
+            }
+        }
+        .scrollDisabled(places.isEmpty)
+        .navigationTitle("Been There")
+        .toolbar {
             #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
             #endif
-                ToolbarItem {
-                    Button {
-                        router.navigate(to: .placeForm())
-                    } label: {
-                        Label("Add Item", systemImage: "plus")
-                    }
+
+            ToolbarItem {
+                Button {
+                    router.navigate(to: .placeForm())
+                } label: {
+                    Label("Add Item", systemImage: "plus")
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 

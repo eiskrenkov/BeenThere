@@ -13,6 +13,8 @@ struct PlaceDetailView: View {
 
     var body: some View {
         Text(place.name)
+            .navigationTitle(place.name)
+            .navigationBarTitleDisplayMode(.inline)
     }
 
 }

@@ -28,6 +28,7 @@ struct PlaceForm: View {
                 .focused($focusedField, equals: .name)
         }
         .navigationTitle(place == nil ? "New Place" : "Edit Place")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
                 let newPlace = Place(name: name, createdAt: Date())
