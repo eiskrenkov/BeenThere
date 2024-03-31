@@ -12,7 +12,8 @@ struct PlaceDetailView: View {
     var place: Place
 
     var body: some View {
-        Text(place.name)
+        PlaceMap(place: place, spanDelta: 0.5)
+            .ignoresSafeArea()
             .navigationTitle(place.name)
             .navigationBarTitleDisplayMode(.inline)
     }

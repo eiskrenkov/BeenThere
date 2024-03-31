@@ -20,6 +20,7 @@
 		EECE7EE12BB8675D004C008E /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */; };
 		EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE32BB8C8D3004C008E /* Logger.swift */; };
 		EECE7EE62BB8CB84004C008E /* PlaceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE52BB8CB84004C008E /* PlaceForm.swift */; };
+		EECE7EE82BB8DFD3004C008E /* PlaceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE72BB8DFD3004C008E /* PlaceMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
 		EECE7EE32BB8C8D3004C008E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		EECE7EE52BB8CB84004C008E /* PlaceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceForm.swift; sourceTree = "<group>"; };
+		EECE7EE72BB8DFD3004C008E /* PlaceMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				EECE7ED62BB8653A004C008E /* PlacesListView.swift */,
 				EECE7EE02BB8675D004C008E /* PlaceDetailView.swift */,
 				EECE7EE52BB8CB84004C008E /* PlaceForm.swift */,
+				EECE7EE72BB8DFD3004C008E /* PlaceMap.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			files = (
 				EECE7EAA2BB86285004C008E /* RootView.swift in Sources */,
 				EECE7EDF2BB86700004C008E /* RootRoute.swift in Sources */,
+				EECE7EE82BB8DFD3004C008E /* PlaceMap.swift in Sources */,
 				EECE7EDD2BB866D0004C008E /* Routing.swift in Sources */,
 				EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */,
 				EECE7EAC2BB86285004C008E /* Place.swift in Sources */,

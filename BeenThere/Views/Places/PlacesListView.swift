@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import MapKit
 
 struct PlacesListView: View {
 
@@ -16,39 +17,44 @@ struct PlacesListView: View {
     @Query private var places: [Place]
 
     var body: some View {
-        List {
-            ForEach(places) { place in
-                Button {
-                    router.navigate(to: .placeDetailView(place))
-                } label: {
-                    Text(place.name)
+        ScrollView {
+            LazyVStack(spacing: 16) {
+                ForEach(places) { place in
+                    Button {
+                        router.navigate(to: .placeDetailView(place))
+                    } label: {
+                        PlaceMap(place: place)
+                            .frame(height: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 13))
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }
+            .padding()
+            .overlay {
+                if places.isEmpty {
+                    ContentUnavailableView(
+                        "You haven't been anywhere yet",
+                        systemImage: "airplane",
+                        description: Text("Add your first place using plus button at the top right corner")
+                    )
                 }
             }
-            .onDelete(perform: deleteItems)
-        }
-        .overlay {
-            if places.isEmpty {
-                ContentUnavailableView(
-                    "You haven't been anywhere yet",
-                    systemImage: "airplane",
-                    description: Text("Add your first place using plus button at the top right corner")
-                )
-            }
-        }
-        .scrollDisabled(places.isEmpty)
-        .navigationTitle("Been There")
-        .toolbar {
-            #if os(iOS)
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-            }
-            #endif
+            .scrollDisabled(places.isEmpty)
+            .navigationTitle("Been There")
+            .toolbar {
+#if os(iOS)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+#endif
 
-            ToolbarItem {
-                Button {
-                    router.navigate(to: .placeForm())
-                } label: {
-                    Label("Add Item", systemImage: "plus")
+                ToolbarItem {
+                    Button {
+                        router.navigate(to: .placeForm())
+                    } label: {
+                        Label("Add Item", systemImage: "plus")
+                    }
                 }
             }
         }
