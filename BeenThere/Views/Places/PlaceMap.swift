@@ -20,7 +20,8 @@ struct PlaceMap: View {
                     center: place.coordinate,
                     span: MKCoordinateSpan(latitudeDelta: spanDelta, longitudeDelta: spanDelta)
                 )
-            )
+            ),
+            interactionModes: []
         ) {
             Marker(
                 place.name,

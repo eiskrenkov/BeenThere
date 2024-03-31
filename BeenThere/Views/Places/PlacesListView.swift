@@ -17,6 +17,39 @@ struct PlacesListView: View {
     @Query private var places: [Place]
 
     var body: some View {
+        view
+            .navigationTitle("Been There")
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        router.navigate(to: .placeForm())
+                    } label: {
+                        Label("Add Place", systemImage: "plus")
+                    }
+                }
+            }
+    }
+
+    @ViewBuilder
+    private var view: some View {
+        if places.isEmpty {
+            emptyState
+        } else {
+            list
+        }
+    }
+
+    @ViewBuilder
+    private var emptyState: some View {
+        ContentUnavailableView(
+            "You haven't been anywhere yet",
+            systemImage: "airplane",
+            description: Text("Add your first place using plus button at the top right corner")
+        )
+    }
+
+    @ViewBuilder 
+    private var list: some View {
         ScrollView {
             LazyVStack(spacing: 16) {
                 ForEach(places) { place in
@@ -28,43 +61,8 @@ struct PlacesListView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 13))
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .padding()
-            .overlay {
-                if places.isEmpty {
-                    ContentUnavailableView(
-                        "You haven't been anywhere yet",
-                        systemImage: "airplane",
-                        description: Text("Add your first place using plus button at the top right corner")
-                    )
-                }
-            }
-            .scrollDisabled(places.isEmpty)
-            .navigationTitle("Been There")
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-
-                ToolbarItem {
-                    Button {
-                        router.navigate(to: .placeForm())
-                    } label: {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(places[index])
-            }
         }
     }
 
