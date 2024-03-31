@@ -23,6 +23,12 @@ struct PlaceDetailView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
+                    Button() {
+                        place.favorite.toggle()
+                    } label: {
+                        Label("Favoriete", systemImage: place.favorite ? "star.fill" : "star")
+                    }
+
                     Spacer()
 
                     Button(role: .destructive) {

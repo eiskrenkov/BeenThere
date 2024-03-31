@@ -18,14 +18,18 @@ final class Place {
     var latitude: Double
     var longitude: Double
 
+    var favorite: Bool
+
     var createdAt: Date
 
-    init(country: String, name: String, latitude: Double, longtitude: Double, createdAt: Date) {
+    init(country: String, name: String, latitude: Double, longtitude: Double, favorite: Bool = false, createdAt: Date) {
         self.country = country
         self.name = name
 
         self.latitude = latitude
         self.longitude = longtitude
+
+        self.favorite = favorite
 
         self.createdAt = createdAt
     }

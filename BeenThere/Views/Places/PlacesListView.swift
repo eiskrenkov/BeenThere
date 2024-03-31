@@ -19,6 +19,7 @@ struct PlacesListView: View {
     var body: some View {
         view
             .navigationTitle("Been There")
+            .toolbarBackground(.automatic, for: .navigationBar)
             .toolbar {
                 ToolbarItem {
                     Button {
@@ -51,19 +52,75 @@ struct PlacesListView: View {
     @ViewBuilder 
     private var list: some View {
         ScrollView {
-            LazyVStack(spacing: 16) {
-                ForEach(places) { place in
-                    Button {
-                        router.navigate(to: .placeDetailView(place))
-                    } label: {
-                        PlaceMap(place: place)
-                            .frame(height: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 13))
+            LazyVStack(spacing: 0, pinnedViews: [/*.sectionHeaders*/]) {
+                let favoritePlaces = places.filter { $0.favorite }
+
+                if !favoritePlaces.isEmpty {
+                    Section(
+                        header: SectionHeader(title: "Favorites"),
+                        footer: SectionFooter()
+                    ) {
+                        ForEach(favoritePlaces) { place in
+                            PlaceView(place: place)
+                                .padding(.horizontal)
+                                .padding(.bottom)
+                        }
                     }
                 }
+
+                ForEach(places.filter { !$0.favorite }) { place in
+                    PlaceView(place: place)
+                        .padding(.horizontal)
+                        .padding(.bottom)
+                }
             }
-            .padding()
         }
+    }
+
+    private struct PlaceView: View {
+
+        @EnvironmentObject private var router: Router<RootRoute>
+
+        var place: Place
+
+        var body: some View {
+            Button {
+                router.navigate(to: .placeDetailView(place))
+            } label: {
+                PlaceMap(place: place)
+                    .frame(height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 13))
+            }
+        }
+
+    }
+
+    private struct SectionHeader: View {
+
+        var title: String
+
+        var body: some View {
+            HStack {
+                Text(title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.secondary)
+
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 5)
+        }
+
+    }
+
+    private struct SectionFooter: View {
+
+        var body: some View {
+            Divider()
+                .padding(.horizontal)
+                .padding(.bottom)
+        }
+
     }
 
 }
