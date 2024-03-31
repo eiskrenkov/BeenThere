@@ -17,17 +17,22 @@ struct PlaceDetailView: View {
     var place: Place
 
     var body: some View {
-        PlaceMap(place: place, spanDelta: 0.5)
+        PlaceMap(place: place, spanDelta: 0.5, interactive: true)
             .ignoresSafeArea()
             .navigationTitle(place.name)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                Button(role: .destructive) {
-                    deletionConfirmationPresented = true
-                } label: {
-                    Label("Delete", systemImage: "trash")
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+
+                    Button(role: .destructive) {
+                        deletionConfirmationPresented = true
+                    } label: {
+                        Label("Delete", systemImage: "trash")
+                    }
                 }
             }
+            .toolbarBackground(.visible, for: .bottomBar)
             .confirmationDialog(
                 "Are you sure you want to delete \(place.name)?",
                 isPresented: $deletionConfirmationPresented

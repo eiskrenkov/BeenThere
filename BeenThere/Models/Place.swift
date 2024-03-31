@@ -12,13 +12,21 @@ import MapKit
 @Model
 final class Place {
 
-    @Attribute var name: String
-    var createdAt: Date
-    var latitude: Double = 41.9
-    var longitude: Double = 12.5
+    var country: String
+    var name: String
 
-    init(name: String, createdAt: Date) {
+    var latitude: Double
+    var longitude: Double
+
+    var createdAt: Date
+
+    init(country: String, name: String, latitude: Double, longtitude: Double, createdAt: Date) {
+        self.country = country
         self.name = name
+
+        self.latitude = latitude
+        self.longitude = longtitude
+
         self.createdAt = createdAt
     }
 

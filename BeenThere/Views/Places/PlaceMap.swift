@@ -12,6 +12,7 @@ struct PlaceMap: View {
 
     var place: Place
     var spanDelta: CLLocationDegrees = 5
+    var interactive: Bool = false
 
     var body: some View {
         Map(
@@ -21,7 +22,7 @@ struct PlaceMap: View {
                     span: MKCoordinateSpan(latitudeDelta: spanDelta, longitudeDelta: spanDelta)
                 )
             ),
-            interactionModes: []
+            interactionModes: interactive ? .all : []
         ) {
             Marker(
                 place.name,

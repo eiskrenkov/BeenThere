@@ -21,6 +21,8 @@
 		EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE32BB8C8D3004C008E /* Logger.swift */; };
 		EECE7EE62BB8CB84004C008E /* PlaceForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE52BB8CB84004C008E /* PlaceForm.swift */; };
 		EECE7EE82BB8DFD3004C008E /* PlaceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE72BB8DFD3004C008E /* PlaceMap.swift */; };
+		EECE7EEA2BB9621A004C008E /* LocationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EE92BB9621A004C008E /* LocationPicker.swift */; };
+		EECE7EEC2BB9627D004C008E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECE7EEB2BB9627D004C008E /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		EECE7EE32BB8C8D3004C008E /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		EECE7EE52BB8CB84004C008E /* PlaceForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceForm.swift; sourceTree = "<group>"; };
 		EECE7EE72BB8DFD3004C008E /* PlaceMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMap.swift; sourceTree = "<group>"; };
+		EECE7EE92BB9621A004C008E /* LocationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPicker.swift; sourceTree = "<group>"; };
+		EECE7EEB2BB9627D004C008E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 			children = (
 				EECE7EDC2BB866D0004C008E /* Routing.swift */,
 				EECE7EDE2BB86700004C008E /* RootRoute.swift */,
+				EECE7EE92BB9621A004C008E /* LocationPicker.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				EECE7EE32BB8C8D3004C008E /* Logger.swift */,
+				EECE7EEB2BB9627D004C008E /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -316,10 +322,12 @@
 				EECE7EE82BB8DFD3004C008E /* PlaceMap.swift in Sources */,
 				EECE7EDD2BB866D0004C008E /* Routing.swift in Sources */,
 				EECE7EE42BB8C8D3004C008E /* Logger.swift in Sources */,
+				EECE7EEA2BB9621A004C008E /* LocationPicker.swift in Sources */,
 				EECE7EAC2BB86285004C008E /* Place.swift in Sources */,
 				EECE7EE12BB8675D004C008E /* PlaceDetailView.swift in Sources */,
 				EECE7ED72BB8653A004C008E /* PlacesListView.swift in Sources */,
 				EECE7EE62BB8CB84004C008E /* PlaceForm.swift in Sources */,
+				EECE7EEC2BB9627D004C008E /* LocationService.swift in Sources */,
 				EECE7EA82BB86285004C008E /* BeenThereApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
