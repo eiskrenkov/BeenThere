@@ -16,9 +16,20 @@ struct PlacesListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var places: [Place]
 
+    @State private var searchQuery: String = ""
+
+    private var searchResults: [Place] {
+        if searchQuery.isEmpty {
+            return places
+        } else {
+            return places.filter { $0.name.contains(searchQuery) }
+        }
+    }
+
     var body: some View {
         view
             .navigationTitle("Been There")
+            .searchable(text: $searchQuery)
             .toolbarBackground(.automatic, for: .navigationBar)
             .toolbar {
                 ToolbarItem {
@@ -53,7 +64,7 @@ struct PlacesListView: View {
     private var list: some View {
         ScrollView {
             LazyVStack(spacing: 0, pinnedViews: [/*.sectionHeaders*/]) {
-                let favoritePlaces = places.filter { $0.favorite }
+                let favoritePlaces = searchResults.filter { $0.favorite }
 
                 if !favoritePlaces.isEmpty {
                     Section(
@@ -68,7 +79,7 @@ struct PlacesListView: View {
                     }
                 }
 
-                ForEach(places.filter { !$0.favorite }) { place in
+                ForEach(searchResults.filter { !$0.favorite }) { place in
                     PlaceView(place: place)
                         .padding(.horizontal)
                         .padding(.bottom)
