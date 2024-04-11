@@ -1,0 +1,4 @@
+# See https://git-scm.com/docs/gitattributes for more about git attribute files.
+# See https://github.com/github/linguist/blob/master/docs/overrides.md for more about GitHub's linguist.
+
+*.pbxproj linguist-generated
